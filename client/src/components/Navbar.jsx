@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { assets } from "../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 
 const Navbar = () => {
-  const [user, setUser] = useState(null);
+  const {user} = useContext(AppContext)
+
   const navigate = useNavigate();
   return (
     <div className="flex items-center justify-between py-4">
@@ -14,7 +16,7 @@ const Navbar = () => {
       <div>
         {user ? (
           <div className="flex items-center gap-2 sm:gap-3">
-            <button className="flex items-center gap-2 bg-blue-100 px-4 sm:px-6 py-1.5 sm:py-3 rounded-full hover:scale-105 transition-all duration-700">
+            <button onClick={()=>navigate('buy')} className="flex items-center gap-2 bg-blue-100 px-4 sm:px-6 py-1.5 sm:py-3 rounded-full hover:scale-105 transition-all duration-700">
                 <img src={assets.credit_star} alt="" className="w-5" />
                 <p className="text-xs sm:text-sm font-medium text-gray-600">Credits left : 50</p>
             </button>
