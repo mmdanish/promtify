@@ -8,7 +8,7 @@ const GenerateBtn = () => {
         See the magic. Try now
       </h1>
 
-      <button className="inline-flex items-center g2 px-12 py-3 rounded-full bg-black text-white m-auto hover:scale-105 transition-all duration-500">
+      <button className="inline-flex items-center g2 px-12 py-3 rounded-full bg-black text-white m-auto cursor-pointer hover:scale-105 transition-all duration-500">
         Generate Images
         <img src={assets.star_group} alt="" className="h-6" />
       </button>
