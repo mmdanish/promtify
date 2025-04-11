@@ -61,7 +61,7 @@ export const userCredits = async (req, res) => {
 
     const user = await userModel.findById(userId);
     res.json({
-      sucees: true,
+      success: true,
       credits: user.creditBalance,
       user: { name: user.name },
     });
